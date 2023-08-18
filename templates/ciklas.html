@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Lyginiai iki 9</h3>
+{% for x in range(10) %}
+{% if x % 2 == 0 %}
+<p> {{ x }} </p>
+{% endif %}
+{% endfor %}
+<hr/>
+<h3>Visi skaičiai iki 4</h3>
+{% for x in range(5) %}
+<p> {{ x }} </p>
+{% endfor %}
+<hr/>
+</body>
+</html>
