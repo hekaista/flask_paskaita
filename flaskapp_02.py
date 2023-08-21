@@ -17,9 +17,11 @@ def orai():
 def ciklas():
     return render_template("ciklas.html")
 
+
 @app.route("/naujienos")
 def naujienos():
     return render_template("naujienos.html")
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
