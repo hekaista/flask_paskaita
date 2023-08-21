@@ -23,22 +23,22 @@ def naujienos():
     return render_template("naujienos.html")
 
 
-@app.route("/pasisveikink5", methods=["GET", "POST"])
-def pasisveikink5():
-    if request.method == "GET":
-        return render_template("pasisveikink5_forma.html")
-    if request.method == "POST":
-        tekstas = request.form["laukelis"]
-        return render_template("pasisveikink5_rezultatai.html", tekstas=tekstas)
-
-
-@app.route("/login", methods=["GET", "POST"])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
-    if request.method == "GET":
-        return render_template("forma.html")
-    if request.method == "POST":
-        kintamasis = request.form["laukelis"]
+    if request.method == 'POST':
+        kintamasis = request.form['laukelis']
         return render_template("vardas.html", sablono_kint=kintamasis)
+    else:
+        return render_template("forma.html")
+
+
+@app.route("/pasisveikink5", methods=['GET', 'POST'])
+def pasisveikink5():
+    if request.method == 'POST':
+        kintamasis = request.form['laukelis']
+        return render_template("sveik_ciklas.html", sablono_kint=kintamasis)
+    else:
+        return render_template("forma.html")
 
 
 @app.route("/<kintamasis>")
