@@ -22,6 +22,9 @@ def ciklas():
 def login():
     if request.method == "GET":
         return render_template("forma.html")
+    if request.method == "POST":
+        kintamasis = request.form["laukelis"]
+        return render_template("vardas.html", sablono_kint=kintamasis)
 
 
 @app.route("/<kintamasis>")
